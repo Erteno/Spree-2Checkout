@@ -1,9 +1,10 @@
 module Spree
-  CheckoutController.class_eval do
-    skip_before_action :verify_authenticity_token, :ensure_valid_state
-    before_action :two_checkout_hook, :only => [:update]
-
-    helper_method :payment_method
+  module CheckoutController.class_eval do
+    
+    def self.prepended(base)
+      base.skip_before_action :verify_authenticity_token, :ensure_valid_state
+      base.before_action :two_checkout_hook, :only => [:update]
+      base.helper_method :payment_method
 
     def two_checkout_payment
       load_order_with_lock
@@ -51,3 +52,5 @@ module Spree
     end
   end
 end
+  
+::Spree::CheckoutController.prepend(Spree::CheckoutControllerDecorator)
