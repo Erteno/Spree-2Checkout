@@ -1,6 +1,5 @@
 module Spree
   module CheckoutController
-    
     def self.prepended(base)
       base.skip_before_action :verify_authenticity_token, :ensure_valid_state
       base.before_action :two_checkout_hook, :only => [:update]
