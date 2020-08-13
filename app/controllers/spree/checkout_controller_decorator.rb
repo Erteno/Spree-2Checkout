@@ -1,5 +1,5 @@
 module Spree
-  module CheckoutController.class_eval do
+  module CheckoutController
     
     def self.prepended(base)
       base.skip_before_action :verify_authenticity_token, :ensure_valid_state
