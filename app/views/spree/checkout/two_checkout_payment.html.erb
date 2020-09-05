@@ -1,4 +1,4 @@
-<% pm=@order.payments.last.payment_method %>
+<% pm=@order.payments.payment_method %>
     <form method="POST" id='paymentForm' action="https://www.2checkout.com/checkout/purchase">
       <%= hidden_field_tag :sid, pm.get_preference(:sid) %>
       <%= hidden_field_tag :cart_order_id, @order.number %>
