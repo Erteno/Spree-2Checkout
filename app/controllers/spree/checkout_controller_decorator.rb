@@ -3,7 +3,6 @@ module Spree
     def self.prepended(base)
       #base.skip_before_action :verify_authenticity_token, :ensure_valid_state
       base.before_action :two_checkout_hook, :only => [:update]
-      base.helper_method :payment_method
     end
 
     def two_checkout_payment
