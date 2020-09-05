@@ -22,9 +22,6 @@
       <%= hidden_field_tag :ship_state, @order.ship_address.state %>
       <%= hidden_field_tag :ship_zip, @order.ship_address.zipcode %>
       <%= hidden_field_tag :ship_country, @order.ship_address.country.name %>
-   
-        <%= hidden_field_tag :demo, "Y" %>
-
       <%= hidden_field_tag :id_type, 1 %>
       <% i = 0 %>
       <% @order.line_items.each do |line_item| -%>
