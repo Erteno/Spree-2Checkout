@@ -29,5 +29,4 @@
 5.  _(Replace http://www.example.com with the actual URL to your store.)_
 6. Enter your **Secret Word**. _(Must be the same value entered in your Spree admin.)_
 7. Click **Save Changes**.
-
 **Please contact 2Checkout directly with any integration questions.**
